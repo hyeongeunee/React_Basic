@@ -17,11 +17,13 @@
     // "Hello, I'm a span"
     // );
 
-    const Title = (
-      <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
-        Hello, I'm a span
-      </h3>
-    );
+    function Title() {
+      return (
+        <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
+          Hello, I'm a span
+        </h3>
+      );
+    }
 
     // const btn = React.createElement(
     //     "button",
@@ -34,7 +36,7 @@
     // "Click Me"
     // );
 
-    const Button = (
+    const Button = () => (
       <button
         style={{
           backgroundColor: 'tomato',
@@ -45,8 +47,13 @@
       </button>
     );
 
-    const container = React.createElement('div', null, [Title, Button]);
+    const Container = () => (
+      <div>
+        <Title />
+        <Button />
+      </div>
+    );
 
-    ReactDOM.render(container, root);
+    ReactDOM.render(<Container />, root);
   </script>
 </html>
